@@ -1,0 +1,39 @@
+Gene2	Gene2Type	Gene2Score
+BRAF	serine/threonine-protein kinase	10
+KMT2A	methyltransferase	10
+ALK	tyrosine kinase	7
+EWSR1	transcriptional regulator	6
+RET	tyrosine kinase	6
+ROS1	DNA glycosylase/lyase	6
+HMGA2	transcriptional regulator	4
+NTRK1	tyrosine kinase	3
+PLAG1	transcription factor	3
+TFE3	transcription factor	3
+ETV1	transcriptional activator	2
+ETV6	transcriptional repressor	2
+FGFR2	tyrosine kinase	2
+JAK2	tyrosine kinase	2
+RAF1	serine/threonine-protein kinase	2
+ERG	potassium channel	2
+FUS	transcriptional regulator	2
+MAST1	microtubule protein	1
+SLC45A3	solute carrier	1
+TFG	Oncogene	1
+ABL1	Oncogene	1
+AKT3	endoplasmic reticulum transport	1
+CLTC	knetochore stabilization	1
+ERC1	regulatory subunit of IKK	1
+ETV4	transcriptional activator	1
+FGFR3	transcriptional activator	1
+MET	tyrosine kinase	1
+MITF	transcription factor	1
+MLLT10	transcriptional regulator	1
+NOTCH1	transcriptional regulator	1
+NR4A3	transcriptional activator	1
+PAX3	transcriptional activator	1
+RUNX1	transcriptional regulator	1
+14-Sep	ctyoskeletal GTPase	1
+SS18	transcriptional activator	1
+THADA	adenoma associated	1
+TMPRSS2	protease	1
+TPM3	actin filament associated	1
