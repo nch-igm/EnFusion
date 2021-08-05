@@ -35,13 +35,13 @@ description <- paste0("assemble_results.R reads a set of fusion detection result
 option_list <- list(make_option("--sample", type = "character", help = "Name of the sample. (required)"),
   make_option("--baseDir", type = "character", help = "Base directory to search for input files. [default = ./]"),
   make_option("--outReport", type = "character", help = "Location of the output report. [default = overlap_$sample.tsv]"),
-  make_option("--collapseoutReport", type = "character", help = "Location of the output report. [default = overlap_$sample.tsv]"),
+  make_option("--collapseoutReport", type = "character", help = "Location of the output collapse report. [default = collapse_overlap_$sample.tsv]"),
   make_option("--outSingleton", type = "character", help = "Location of the Singleton output report. [default = Singleton_KnownFusions_$sample.tsv]"),
   make_option("--outmutlimatch", type = "character", help = "Location of the multimatch output report. [default = Multimatch_$sample.tsv]"),
   make_option("--outNoWL", type = "character", help = "Location of the output no knownfusionlist report. [default = no_knownfusionlist_collapse_$sample.tsv]"),
   make_option("--outNoWL2", type = "character", help = "Location of the output no knownfusionlist report. [default = no_knownfusionlist_2callers_collapse_$sample.tsv]"),
-  make_option("--foutReport", type = "character", help = "Location of the output report. [default = filtered_overlap_knownfusionlist_2callers_$sample.tsv]"),
-  make_option("--foutReport3", type = "character", help = "Location of the output report. [default = filtered_overlap_knownfusionlist_3callers_$sample.tsv]"),
+  make_option("--foutReport", type = "character", help = "Location of the output filtered, two callers report. [default = filtered_overlap_knownfusionlist_2callers_$sample.tsv]"),
+  make_option("--foutReport3", type = "character", help = "Location of the output filtered, three callers report. [default = filtered_overlap_knownfusionlist_3callers_$sample.tsv]"),
   make_option("--ericScript", type = "character", default = NULL, help = "Specific location of the ericScript results file ([sample].results.filtered.tsv)."),
   make_option("--fusionCatcher", type = "character", default = NULL, help = "Specific location of the fusionCatcher results file (final-list_candidate-fusion-genes.txt)."),
   make_option("--fusionMap", type = "character", default = NULL, help = "Specific location of the fusionMap results file (results/FusionDetection.FusionReport.Table.txt)."),
@@ -52,7 +52,9 @@ option_list <- list(make_option("--sample", type = "character", help = "Name of 
   make_option("--tophatFusion", type = "character", default = NULL, help = "Specific location of the tophatFusion results file (fusion_candidates.final.txt), please note that if file is empty, overlap will fail."),
 #  make_option("--dragen", type = "character", default = NULL, help = "Specific location of the dragen results file (DRAGEN.fusion_candidates.final.txt)."),
   make_option("--arriba", type = "character", default = NULL, help = "Specific location of the arriba results file (fusions.tsv)."),
-  make_option("--cicero", type = "character", default = NULL, help = "Specific location of the cicero results file (annotated.fusion.txt)."))
+  make_option("--cicero", type = "character", default = NULL, help = "Specific location of the cicero results file (annotated.fusion.txt)."),
+  make_option("--frequencyFile", type = "character", default = NULL, help = "Location of the gene pair frequency file. [default = {srcdir}/GenePairCounts_2021-08-05.tsv]"),
+  make_option("--frequencyDbConnect", action = "store_true", default = FALSE, help = "Flag to connect to the frequency database instead of use the frequency file."))
 opt <- parse_args(OptionParser(usage = usage, description = description, option_list = option_list))
 
 stopifnot(is.character(opt$sample))
@@ -68,6 +70,12 @@ if (is.null(opt$outReport)) {
 } else {
   outReport <- opt$outReport
 }
+if (is.null(opt$frequencyFile)) {
+  frequencyFile <- file.path(srcdir, "GenePairCounts_2021-08-05.tsv")
+} else {
+  frequencyFile <- opt$frequencyFile
+}
+# TODO: add else statements?
 if (is.null(opt$collapseoutReport)) {
   collapseoutReport <- paste0("collapse_overlap_", sample, ".tsv")
 }
@@ -189,17 +197,28 @@ for (i in 1:length(all_data)) {
 
 # Get the 'population frequency' for all previously reported fusion pairs
 
-con <- connect_to_db()
-
-fusion_db <- tbl(con, "fusion")
-analysis_db <- tbl(con, "analysis")
-
-ordered_db <- left_join(fusion_db, analysis_db, "analysis_id") %>% distinct(sample_id,
-  gene1, gene2) %>% collect()
-
-unordered_db <- ordered_db %>% mutate(unordered = get_unordered(gene1, gene2)) %>%
-  distinct(sample_id, unordered)
-
+if (opt$frequencyDbConnect) {
+  # pull frequency data from the DB if the user requested the DB connection
+  con <- connect_to_db()
+  
+  fusion_db <- tbl(con, "fusion")
+  analysis_db <- tbl(con, "analysis")
+  
+  ordered_db <- left_join(fusion_db, analysis_db, "analysis_id") %>% distinct(sample_id,
+                                                                              gene1, gene2) %>% collect()
+  
+  unordered_db <- ordered_db %>% mutate(unordered = get_unordered(gene1, gene2)) %>%
+    distinct(sample_id, unordered)
+} else {
+  # pull frequency data from the frequency file
+  gene_pair_counts <- read_tsv(
+    frequencyFile,
+    col_types = cols(
+      .default = col_character(),
+      Count = col_integer(),
+      Samples = col_integer(),
+      Freq = col_double()))
+}
 
 ################################################################################
 # Get the overlapping genes and results
@@ -229,32 +248,69 @@ union_report <- filter(union_report, NumTools < 2)
 ################################################################################
 
 # Add population frequencies to the report
-pop_frequency <- function(unordered_fusions, unordered_db) {
+pop_frequency_db <- function(unordered_fusions, unordered_db) {
   result <- purrr::map_chr(unordered_fusions, function(uf) {
     return(sum(unordered_db$unordered == uf)/length(unique(unordered_db$sample_id)))
   })
   return(result)
 }
-pop_count <- function(unordered_fusions, unordered_db) {
+pop_count_db <- function(unordered_fusions, unordered_db) {
   result <- purrr::map_chr(unordered_fusions, function(uf) {
     return(sum(unordered_db$unordered == uf))
   })
 }
 
-report <- report %>% mutate(GenePairFrequency = pop_frequency(UnorderedFusion, unordered_db),
-  GenePairCount = pop_count(UnorderedFusion, unordered_db),
-  SampleCount = length(unique(unordered_db$sample_id))) %>%
-  select(UnorderedFusion, OrderedFusion, NumTools, GenePairFrequency,
-         GenePairCount, SampleCount, HGNCSymbol1, Gene1, alias_match_1, multimatch1, Chr1, Break1,
-         Strand1, HGNCSymbol2, Gene2, alias_match_2, multimatch2, Chr2, Break2, Strand2,
-         everything())
-union_report <- union_report %>% mutate(GenePairFrequency = pop_frequency(UnorderedFusion, unordered_db),
-  GenePairCount = pop_count(UnorderedFusion, unordered_db),
-  SampleCount = length(unique(unordered_db$sample_id))) %>%
+pop_frequency_file <- function(unordered_fusions, gene_pair_counts) {
+  result <- purrr::map_chr(unordered_fusions, function(uf) {
+    freq <- gene_pair_counts[gene_pair_counts$Genes == uf, "Freq"]
+    if (nrow(freq) == 0) {
+      freq <- 0
+    }
+    return(as.character(freq))
+  })
+  return(result)
+}
+pop_count_file <- function(unordered_fusions, gene_pair_counts) {
+  result <- purrr::map_chr(unordered_fusions, function(uf) {
+    count <- gene_pair_counts[gene_pair_counts$Genes == uf, "Count"]
+    if (nrow(count) == 0) {
+      count <- 0
+    }
+    return(as.character(count))
+  })
+}
+
+if (opt$frequencyDbConnect) {
+  report <- report %>% mutate(GenePairFrequency = pop_frequency_db(UnorderedFusion, unordered_db),
+    GenePairCount = pop_count_db(UnorderedFusion, unordered_db),
+    SampleCount = length(unique(unordered_db$sample_id))) %>%
     select(UnorderedFusion, OrderedFusion, NumTools, GenePairFrequency,
            GenePairCount, SampleCount, HGNCSymbol1, Gene1, alias_match_1, multimatch1, Chr1, Break1,
            Strand1, HGNCSymbol2, Gene2, alias_match_2, multimatch2, Chr2, Break2, Strand2,
            everything())
+  union_report <- union_report %>% mutate(GenePairFrequency = pop_frequency_db(UnorderedFusion, unordered_db),
+    GenePairCount = pop_count_db(UnorderedFusion, unordered_db),
+    SampleCount = length(unique(unordered_db$sample_id))) %>%
+      select(UnorderedFusion, OrderedFusion, NumTools, GenePairFrequency,
+             GenePairCount, SampleCount, HGNCSymbol1, Gene1, alias_match_1, multimatch1, Chr1, Break1,
+             Strand1, HGNCSymbol2, Gene2, alias_match_2, multimatch2, Chr2, Break2, Strand2,
+             everything())
+} else {
+  report <- report %>% mutate(GenePairFrequency = pop_frequency_file(UnorderedFusion, gene_pair_counts),
+    GenePairCount = pop_count_file(UnorderedFusion, gene_pair_counts),
+    SampleCount = as.character(gene_pair_counts[1,  "Samples"])) %>%
+    select(UnorderedFusion, OrderedFusion, NumTools, GenePairFrequency,
+           GenePairCount, SampleCount, HGNCSymbol1, Gene1, alias_match_1, multimatch1, Chr1, Break1,
+           Strand1, HGNCSymbol2, Gene2, alias_match_2, multimatch2, Chr2, Break2, Strand2,
+           everything())
+  union_report <- union_report %>% mutate(GenePairFrequency = pop_frequency_file(UnorderedFusion, gene_pair_counts),
+    GenePairCount = pop_count_db(UnorderedFusion, gene_pair_counts),
+    SampleCount = as.character(gene_pair_counts[1,  "Samples"])) %>%
+      select(UnorderedFusion, OrderedFusion, NumTools, GenePairFrequency,
+             GenePairCount, SampleCount, HGNCSymbol1, Gene1, alias_match_1, multimatch1, Chr1, Break1,
+             Strand1, HGNCSymbol2, Gene2, alias_match_2, multimatch2, Chr2, Break2, Strand2,
+             everything())
+}
 
 ################################################################################
 
