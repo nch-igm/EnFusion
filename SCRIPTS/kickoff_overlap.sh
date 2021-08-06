@@ -92,47 +92,47 @@ run_overlap() {
   cd $working_dir
   echo $working_dir
   echo $working_dir/overlap_$sample_name.tsv
-  aws s3 cp $output_location/fusioncatcher/final-list_candidate-fusion-genes.txt .
-  aws s3 cp $output_location/fusionmap/results/FusionDetection.FusionReport.Table.txt .
-  aws s3 cp $output_location/jaffa/jaffa_results.csv .
-  aws s3 cp $output_location/mapsplice/fusions_well_annotated.txt .
-  aws s3 cp $output_location/starfusion/star-fusion.fusion_predictions.abridged.tsv .
-  aws s3 cp $output_location/arriba/fusions.tsv .
-  aws s3 cp $output_location/cicero/annotated.fusion.txt .
+  cp $output_location/fusioncatcher/final-list_candidate-fusion-genes.txt .
+  cp $output_location/fusionmap/results/FusionDetection.FusionReport.Table.txt .
+  cp $output_location/jaffa/jaffa_results.csv .
+  cp $output_location/mapsplice/fusions_well_annotated.txt .
+  cp $output_location/starfusion/star-fusion.fusion_predictions.abridged.tsv .
+  cp $output_location/arriba/fusions.tsv .
+  cp $output_location/cicero/annotated.fusion.txt .
   # set ENVIRONMENT for the R session (used to switch between test/prod DB)
   echo "ENVIRONMENT=$ENVIRONMENT" > .Renviron
   if [[ "$upload_to_db" == "true" ]]; then
     $script_dir/R/upload_fusion_results.R --subject $patient_id --sample $sample_name
   fi
   $script_dir/R/assemble_results.R --sample $sample_name --outReport $working_dir/overlap_$sample_name.tsv
-#  aws s3 cp $working_dir/all_fusions_overlap_$sample_name.tsv $output_location/all_fusions_overlap_$sample_name.tsv
-  aws s3 cp $working_dir/overlap_$sample_name.tsv $output_location/overlap_$sample_name.tsv
-  aws s3 cp $working_dir/Singleton_KnownFusions_$sample_name.tsv $output_location/Singleton_KnownFusions_$sample_name.tsv
-  aws s3 cp $working_dir/filtered_overlap_knownfusionlist_2callers_$sample_name.tsv $output_location/filtered_overlap_knownfusionlist_2callers_$sample_name.tsv
-  aws s3 cp $working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv $output_location/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
-  aws s3 cp $working_dir/Multimatch_$sample_name.tsv $output_location/Multimatch_$sample_name.tsv
+#   cp $working_dir/all_fusions_overlap_$sample_name.tsv $output_location/all_fusions_overlap_$sample_name.tsv
+   cp $working_dir/overlap_$sample_name.tsv $output_location/overlap_$sample_name.tsv
+   cp $working_dir/Singleton_KnownFusions_$sample_name.tsv $output_location/Singleton_KnownFusions_$sample_name.tsv
+   cp $working_dir/filtered_overlap_knownfusionlist_2callers_$sample_name.tsv $output_location/filtered_overlap_knownfusionlist_2callers_$sample_name.tsv
+   cp $working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv $output_location/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
+   cp $working_dir/Multimatch_$sample_name.tsv $output_location/Multimatch_$sample_name.tsv
   if [ -f $working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv ]; then
-    aws s3 cp $working_dir/collapse_overlap_$sample_name.tsv $output_location/collapse_overlap_$sample_name.tsv
+     cp $working_dir/collapse_overlap_$sample_name.tsv $output_location/collapse_overlap_$sample_name.tsv
   else
     echo "$working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv does not exist"
   fi
   if [ -f $working_dir/no_knownfusionlist_collapse_$sample_name.tsv ]; then
-    aws s3 cp $working_dir/no_knownfusionlist_collapse_$sample_name.tsv $output_location/no_knownfusionlist_collapse_$sample_name.tsv
+     cp $working_dir/no_knownfusionlist_collapse_$sample_name.tsv $output_location/no_knownfusionlist_collapse_$sample_name.tsv
   else
     echo "$working_dir/no_knownfusionlist_collapse_$sample_name.tsv does not exist"
   fi
   if [ -f $working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv ]; then
-    aws s3 cp $working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv $output_location/no_knownfusionlist_2callers_collapse_$sample_name.tsv
+     cp $working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv $output_location/no_knownfusionlist_2callers_collapse_$sample_name.tsv
   else
     echo "$working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv does not exist"
   fi
   if [ -f $working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv ]; then
-    aws s3 cp $working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv $output_location/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv
+     cp $working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv $output_location/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv
   else
     echo "$working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv does not exist"
   fi
   if [ -f $working_dir/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv ]; then
-    aws s3 cp $working_dir/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv $output_location/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
+     cp $working_dir/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv $output_location/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
   else
     echo "$working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv does not exist"
   fi
