@@ -34,7 +34,7 @@ Navigate to the EnFusion directory and run Docker build.
 
 ```bash
 cd EnFusion
-docker build
+docker build . -t enfusion
 ```
 
 ## Run the Docker image
@@ -42,7 +42,7 @@ docker build
 Get a help message from the entrypoint.
 
 ```bash
-docker run EnFusion --help
+docker run enfusion --help
 ```
 
 Useful flags
