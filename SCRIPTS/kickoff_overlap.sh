@@ -8,7 +8,7 @@
 script_usage() {
   echo "
 [USAGE]: This script kicks off a script that merges fusion detection results \
-from many tools. Arguements passed in from API gateway.
+from many tools.
 
 -h * [None] Print this help message.
 -o * output directory
