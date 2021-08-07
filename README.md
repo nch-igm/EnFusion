@@ -37,7 +37,7 @@ cd EnFusion
 docker build . -t enfusion
 ```
 
-## Test the Docker image
+#### Test the Docker image
 
 Get a help message from the entrypoint.
 
