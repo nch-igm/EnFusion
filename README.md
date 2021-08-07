@@ -74,10 +74,27 @@ docker -v ./localdir:/data --rm run enfusion
 The `-v` flag will mount a host directory as a data volume to the docker container
 
 #### Test data has been made available here: 
+
 ##### To practice with this test data, save test data directory to local machine and then mount it as a volume:
-`EnFusion/test_data/test`
 
+Data is located here: `EnFusion/test_data/test`
 
+The test data contains output from 5 callers, and upon downloading this data, the directory structure should look like this:
+
+├── test_data
+    ├── samples
+    └── test
+        ├── fusioncatcher
+        │   └── final-list_candidate-fusion-genes.txt
+        ├── fusionmap
+        │   └── results
+        │       └── FusionDetection.FusionReport.Table.txt
+        ├── jaffa
+        │   └── jaffa_results.csv
+        ├── mapsplice
+        │   └── fusions_well_annotated.txt
+        └── starfusion
+            └── star-fusion.fusion_predictions.abridged.tsv
 
 
 
