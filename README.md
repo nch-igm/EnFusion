@@ -75,7 +75,7 @@ The `-v` flag will mount a host directory as a data volume to the docker contain
 
 #### Test data has been made available here: 
 ##### To practice with this test data, save test data directory to local machine and then mount it as a volume:
-
+`EnFusion/test_data/test`
 
 
 
