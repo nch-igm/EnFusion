@@ -37,7 +37,7 @@ cd EnFusion
 docker build . -t enfusion
 ```
 
-## Run the Docker image
+## Test the Docker image
 
 Get a help message from the entrypoint.
 
@@ -50,6 +50,18 @@ Useful flags
 - `--rm` deletes the container after is stops running. You can use the command `docker container ls --all` to view stopped containers that have not been deleted.
 - `-it` allows for an interactive session.
 - `--entrypoint "/bin/bash"` overwrites the entrypoint with the bash binary.
+
+#### Please note that for the overlap script to run properly, there is an expected file structure hierarchy, however, as long as the below files are included within the mounted volume to the Docker, the overlap script will recursively searches all directories under the `input_location` for fusion detection results files. The default search looks for the following expected file names:
+
+arriba        = fusions.tsv
+cicero        = annotated.fusion.txt
+fusionCatcher = final-list_candidate-fusion-genes.txt
+fusionMap     = FusionDetection.FusionReport.Table.txt
+jaffa         = jaffa_results.csv
+mapSplice     = fusions_well_annotated.txt
+starFusion    = star-fusion.fusion_predictions.abridged.tsv
+
+## Run the Docker image
 
 # TODO: nch-igm-ensemble-fusion-detection
 
@@ -280,33 +292,6 @@ This command will recursively search under the current directory `.` for the `dr
 
 The overlap code only _knows_ how to parse the data from the output files in the default list. Make sure your custom locations point to files that hold the same data. There may be multiple output files from each fusion caller. Our overlap code is only parsing certain files for certain data to generate the overlap report.
 
-## Upload to the database
-
-Run `kickoff_upload.sh` to upload fusion results to the database.
-
-```bash
-overlap/kickoff_upload.sh -h
-```
-
-The result
-
-```txt
-[USAGE]: Use this script to upload fusion detection results to the fusion detection database.
-
--h * [None] Print this help message.
--d * [results_dir1,results_dir2,...] List of directories (comma-separated) where the fusion results are located. Directories must be full paths. Ex: /path/to/fusion_results1,/path/to/fusion_results2.
--p * [patient1,patient2,...] List of patient IDs (comma-separated). The number of patient IDs must be equal to the number of results directories and they must be listed in the same respective order. Ex: patient1,patient2. (Also referred to as the 'subject ID'.)
--s * [sample1,sample2,...] List of sample IDs (comma-separated). The number of sample IDs must be equal to the number of results directories and they must be listed in the same respective order. Ex: sample1,sample2.
--r * [reads1,reads2,...] List of read pairs numbers (comma-separated). The number of read pairs numbers must be equal to the number of results directories and they must be listed in the same respective order. Optional. Ex: 40000000,52000000.
-
-[Example 1]: kickoff_upload.sh -d /path/to/fusion_results1 -p p1 -s s1
-[Example 2]: kickoff_upload.sh -d /path/to/fusion_results1,/path/to/fusion_results2 -p p1,p2 -s s1,s2
-[Example 3]: kickoff_upload.sh -d /path/to/fusion_results1 -p p1 -s s1 -r 42543879
-```
-
-The `-d` results directory must contain fusion detection results files. The results directory usually is the top-level directory for a sample where multiple fusion caller results are stored in sub-directories. The upload code recursively searches all directories under the results directory for fusion detection results files. See the [example](#example) above for an example results directory layout. `kickoff_upload.sh` can take a single results directory as input (for results from multiple tools on a single sample) or multiple results directories as input (to make the upload process faster for multiple samples).
-
-The `-p` patient ID and `-s` sample ID are necessary identifiers to upload the data to the database. The `-r` number of read pairs is optional, depending on whether you want to store that information.
 
 ### Analysis
 
