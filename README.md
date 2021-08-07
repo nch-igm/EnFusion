@@ -81,7 +81,8 @@ Data is located here: `EnFusion/test_data/test`
 
 The test data contains output from 5 callers, and upon downloading this data, the directory structure should look like this:
 
-``` bash
+``` 
+
 ├── test_data   
     ├── samples   
     └── test   
