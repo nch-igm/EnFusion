@@ -81,6 +81,7 @@ Data is located here: `EnFusion/test_data/test`
 
 The test data contains output from 5 callers, and upon downloading this data, the directory structure should look like this:
 
+``` bash
 ├── test_data   
     ├── samples   
     └── test   
@@ -94,8 +95,8 @@ The test data contains output from 5 callers, and upon downloading this data, th
         ├── mapsplice   
         │   └── fusions_well_annotated.txt   
         └── starfusion   
-            └── star-fusion.fusion_predictions.abridged.tsv   
-
+            └── star-fusion.fusion_predictions.abridged.tsv  
+```
 
 
 
