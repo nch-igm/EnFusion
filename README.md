@@ -53,13 +53,13 @@ Useful flags
 
 #### Please note that for the overlap script to run properly, there is an expected file structure hierarchy, however, as long as the below files are included within the mounted volume to the Docker, the overlap script will recursively searches all directories under the `input_location` for fusion detection results files. The default search looks for the following expected file names:
 
-arriba        = fusions.tsv
-cicero        = annotated.fusion.txt
-fusionCatcher = final-list_candidate-fusion-genes.txt
-fusionMap     = FusionDetection.FusionReport.Table.txt
-jaffa         = jaffa_results.csv
-mapSplice     = fusions_well_annotated.txt
-starFusion    = star-fusion.fusion_predictions.abridged.tsv
+arriba        = fusions.tsv  
+cicero        = annotated.fusion.txt   
+fusionCatcher = final-list_candidate-fusion-genes.txt   
+fusionMap     = FusionDetection.FusionReport.Table.txt   
+jaffa         = jaffa_results.csv   
+mapSplice     = fusions_well_annotated.txt   
+starFusion    = star-fusion.fusion_predictions.abridged.tsv   
 
 ## Run the Docker image
 
