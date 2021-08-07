@@ -51,7 +51,7 @@ Useful flags
 - `-it` allows for an interactive session.
 - `--entrypoint "/bin/bash"` overwrites the entrypoint with the bash binary.
 
-#### Please note that for the overlap script to run properly, there is an expected file structure hierarchy, however, as long as the below files are included within the mounted volume to the Docker, the overlap script will recursively searches all directories under the `input_location` for fusion detection results files. The default search looks for the following expected file names:
+#### Please note that for the overlap script to run properly, there is an expected file structure hierarchy, however, as long as the below files are included within the mounted volume to the Docker, the overlap script will recursively search all directories under the `input_location` for fusion detection result files. The default search looks for the following expected file names:
 
 arriba        = `fusions.tsv`  
 cicero        = `annotated.fusion.txt`   
@@ -61,7 +61,16 @@ jaffa         = `jaffa_results.csv`
 mapSplice     = `fusions_well_annotated.txt`   
 starFusion    = `star-fusion.fusion_predictions.abridged.tsv`   
 
-## Run the Docker image
+### 4. Run the Docker image
+
+#### We must first mount our host directory that contains the fusion detection results as a volume to our Docker container:
+
+```bash
+docker -v ./localdir:/data --rm run enfusion
+```
+
+The `-v` flag will mount a host directory as a data volume to the docker container
+
 
 # TODO: nch-igm-ensemble-fusion-detection
 
