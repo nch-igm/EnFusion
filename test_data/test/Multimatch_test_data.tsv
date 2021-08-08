@@ -1,0 +1,10 @@
+# Sample: test_data
+# NumToolsAggregated: 	5
+# - starFusionCalls = 	37
+# - fusionMapCalls = 	32
+# - fusionCatcherCalls = 	355
+# - jaffaCalls = 	491
+# - mapSpliceCalls = 	26
+UnorderedFusion	OrderedFusion	NumTools	Tool	Rank	Total	SupportingReads	HGNCSymbol1	Gene1	multimatch1	alias_match_1	Chr1	Break1	Strand1	HGNCSymbol2	Gene2	multimatch2	alias_match_2	Chr2	Break2	Strand2	Multimatch
+SEPTIN2|SEPTIN6+SFI1	SEPTIN2|SEPTIN6>>SFI1	1	starFusion	31	37	2	SEPTIN2|SEPTIN6	SEPT2	Yes	No	2	241315982	+	SFI1	SFI1	No	Yes	22	31607937	+	yes
+GAMT+IRF4|PWWP3A	GAMT>>IRF4|PWWP3A	1	jaffa	118	491	1	GAMT	GAMT	No	Yes	19	1398916	-	IRF4|PWWP3A	MUM1	Yes	No	19	1376519	+	yes

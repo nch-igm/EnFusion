@@ -32,7 +32,7 @@ NOTCH1	transcriptional regulator	1
 NR4A3	transcriptional activator	1
 PAX3	transcriptional activator	1
 RUNX1	transcriptional regulator	1
-14-Sep	ctyoskeletal GTPase	1
+SEPTIN14	ctyoskeletal GTPase	1
 SS18	transcriptional activator	1
 THADA	adenoma associated	1
 TMPRSS2	protease	1

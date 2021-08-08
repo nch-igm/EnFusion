@@ -75,7 +75,7 @@ get_command_line_input() {
     echo "[ERROR]: Please specify a patient id. See -h for details."
     exit 1
   fi
-
+  
   if [[ -z "$upload_to_db" ]]; then
     upload_to_db=false
   elif [[ "$upload_to_db" != "true" && "$upload_to_db" != "false" ]]; then
@@ -83,12 +83,6 @@ get_command_line_input() {
     exit 1
   fi
 
-  if [[ -z "$frequency" ]]; then
-     frequency=false
-  elif [[ "$frequency" != "true"
-  ; then
-    echo "You have set the frequency cutoff value to $frequency"
-  fi
 }
 
 # Description: Run the overlap script
