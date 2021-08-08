@@ -94,10 +94,9 @@ The test data contains output from 5 callers, and upon downloading this data, th
 In this folder we also have a ```samples``` file which lists all samples included in the test_data directory. The sample listed in ```samples``` matches to the name of the other subdirectory ```test```. More than 1 sample can be in the ```samples``` directory, as long as those same samples are included as directories (samples). In this case above, the Patient ID is ```test_data``` and the Sample ID is ```test```.
 
 #### Use Docker run to invoke EnFusion
-```bash
+```
 docker run -v /Users/sdl002/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test 
 ```
-
 The `-v` flag will mount a host directory as a data volume to the docker container
 The following arguments are passed to the overlap script:  
 `-o` output location  
