@@ -8,7 +8,7 @@
 
 ## Introduction
 
-<ins>EN</ins>semble <ins>Fusion</ins> (EnFusion) merges fusion output data from [Arriba](https://github.com/suhrig/arriba), [CICERO](https://github.com/stjude/CICERO), [FusionMap](http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap), [FusionCatcher](https://github.com/ndaniel/fusioncatcher), [JAFFA](https://github.com/Oshlack/JAFFA/wiki), [MapSplice](http://www.netlab.uky.edu/p/bioinfo/MapSplice2), [SOAPfuse](https://sourceforge.net/projects/soapfuse/), [STAR-Fusion](https://github.com/STAR-Fusion/STAR-Fusion/wiki), [TopHat-Fusion](https://ccb.jhu.edu/software/tophat/fusion_index.shtml), and [DRAGEN RNA-Seq](https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html).
+<ins>En</ins>semble <ins>Fusion</ins> (EnFusion) merges fusion output data from [Arriba](https://github.com/suhrig/arriba), [CICERO](https://github.com/stjude/CICERO), [FusionMap](http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap), [FusionCatcher](https://github.com/ndaniel/fusioncatcher), [JAFFA](https://github.com/Oshlack/JAFFA/wiki), [MapSplice](http://www.netlab.uky.edu/p/bioinfo/MapSplice2), [SOAPfuse](https://sourceforge.net/projects/soapfuse/), [STAR-Fusion](https://github.com/STAR-Fusion/STAR-Fusion/wiki), [TopHat-Fusion](https://ccb.jhu.edu/software/tophat/fusion_index.shtml), and [DRAGEN RNA-Seq](https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html).
 
 To learn more about this approach, visit our BioRxiv article: [Discovery of Clinically Relevant Fusions in Pediatric Cancer](https://www.biorxiv.org/content/10.1101/2021.03.11.435013v1)
 
