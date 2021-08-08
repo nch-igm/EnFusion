@@ -116,8 +116,20 @@ Assembing a list of files to merge...
 [1] "starFusion"    "fusionMap"     "fusionCatcher" "jaffa"        
 [5] "mapSplice"    
 ```
-Because we only have 5 outputs in the test data, you will see an error messages about the missing data from ```arriba``` and ```cicero```. This does not affect the ability of the overlap analysis to run, and is instead a note to let the user know that output from all 7 tools was not provided. For the overlap algorithm to run, output is only required from 2 callers (at minimum).  
-  
+Because we only have 5 outputs in the test data, you will see an error messages about the missing data from ```arriba``` and ```cicero```. This does not affect the ability of the overlap analysis to run, and is instead a note to let the user know that output from all 7 tools was not provided. For the overlap algorithm to run, output is only required from 2 callers (at minimum). The ```list of files to merge``` lets the user know which outputs were identified (of the 7 possible).
+   
+Next you will see a list of all unique fusions identified:
+```
+
+ [1] "KIF5B+RET"      "ALK+EML4"       "ETV6+NTRK3"     "LMNA+NTRK1"    
+ [5] "FGFR3+TACC3"    "NCOA4+RET"      "NTRK1+TPM3"     "PAX8+PPARG"    
+ [9] "BRAF+SLC45A3"   "BAIAP2L1+FGFR3" "ROS1+SLC34A2"   "CD74+ROS1"     
+[13] "ERG+TMPRSS2"    "EGFR+SEPTIN14"  "PLEC+TSPAN4"    "NEK1+SNX25"    
+[17] "TASOR+UBE2K"    "SNX29+TXNDC11"  "SAMD5+SASH1"    "CBX3+CCDC32"   
+[21] "NAIP+OCLN"      "NCOR2+UBC"      "STK3+VPS13B"  
+
+```
+
 
 
 # TODO: nch-igm-ensemble-fusion-detection
