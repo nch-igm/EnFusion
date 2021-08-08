@@ -84,7 +84,6 @@ Test data is located here: `EnFusion/test_data/test`
 The test data contains output from 5 callers, and upon downloading this data, the directory structure should look like this:
 
 ``` 
-
 ├── test_data   
     ├── samples   
     └── test   
@@ -105,7 +104,7 @@ The test data contains output from 5 callers, and upon downloading this data, th
 When running the test data you will see the following on your screen:
   
  ```
- SCRIPTS/test_data/test
+SCRIPTS/test_data/test
 test_data
 /working_dir
 cp: cannot stat '/SCRIPTS/test_data/test/arriba/fusions.tsv': No such file or directory
@@ -120,14 +119,12 @@ Because we only have 5 outputs in the test data, you will see an error messages 
    
 Next you will see a list of all unique fusions identified:
 ```
-
  [1] "KIF5B+RET"      "ALK+EML4"       "ETV6+NTRK3"     "LMNA+NTRK1"    
  [5] "FGFR3+TACC3"    "NCOA4+RET"      "NTRK1+TPM3"     "PAX8+PPARG"    
  [9] "BRAF+SLC45A3"   "BAIAP2L1+FGFR3" "ROS1+SLC34A2"   "CD74+ROS1"     
 [13] "ERG+TMPRSS2"    "EGFR+SEPTIN14"  "PLEC+TSPAN4"    "NEK1+SNX25"    
 [17] "TASOR+UBE2K"    "SNX29+TXNDC11"  "SAMD5+SASH1"    "CBX3+CCDC32"   
 [21] "NAIP+OCLN"      "NCOR2+UBC"      "STK3+VPS13B"  
-
 ```
 
 
