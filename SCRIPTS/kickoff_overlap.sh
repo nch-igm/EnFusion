@@ -14,6 +14,7 @@ from many tools.
 -o * output directory
 -s * sample name
 -p * patient id
+-f * frequency
 -u * [false/true] upload to db indicator (default: false)
 "
 }
@@ -28,7 +29,7 @@ get_command_line_input() {
     exit 1
   fi
 
-  while getopts ":o:s:p:u:h" opt; do
+  while getopts ":o:s:p:f:u:h" opt; do
     case $opt in
       h)
         script_usage
@@ -42,6 +43,9 @@ get_command_line_input() {
         ;;
       p)
         patient_id="$OPTARG"
+        ;;
+      f)
+        frequency="$OPTARG"
         ;;
       u)
         upload_to_db="$OPTARG"
@@ -77,6 +81,13 @@ get_command_line_input() {
   elif [[ "$upload_to_db" != "true" && "$upload_to_db" != "false" ]]; then
     echo "[ERROR]: -u must be set to 'true' or 'false'. See -h for details."
     exit 1
+  fi
+
+  if [[ -z "$frequency" ]]; then
+     frequency=false
+  elif [[ "$frequency" != "true"
+  ; then
+    echo "You have set the frequency cutoff value to $frequency"
   fi
 }
 

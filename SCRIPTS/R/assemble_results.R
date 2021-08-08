@@ -33,6 +33,7 @@ description <- paste0("assemble_results.R reads a set of fusion detection result
   "in the input files. The program searches recursively from the current ", "directory to find known files. The input files can also be specified ",
   "manually.")
 option_list <- list(make_option("--sample", type = "character", help = "Name of the sample. (required)"),
+  make_option("--frequency", type = "double", help = "Fusion gene pair cohort frequency, used for cutoff filtering. Use percentage as decimal value. [default = 0.10]. (required)"),
   make_option("--baseDir", type = "character", help = "Base directory to search for input files. [default = ./]"),
   make_option("--outReport", type = "character", help = "Location of the output report. [default = overlap_$sample.tsv]"),
   make_option("--collapseoutReport", type = "character", help = "Location of the output collapse report. [default = collapse_overlap_$sample.tsv]"),
@@ -60,6 +61,11 @@ opt <- parse_args(OptionParser(usage = usage, description = description, option_
 stopifnot(is.character(opt$sample))
 sample <- opt$sample
 
+if (is.null(opt$frequency)) {
+  frequency <- 0.1
+} else {
+  frequency <- opt$frequency
+}
 if (is.null(opt$baseDir)) {
   baseDir <- "."
 } else {
@@ -415,7 +421,7 @@ union_report <- union_report[c("UnorderedFusion", "OrderedFusion", "KnownFusion"
   "Chr2", "Break2", "Strand2", "Distance", "ReadThrough")]
 
 #filter by frequency and knownfusionlist and create freport, which is the "filtered report"
-freport <- filter(report, GenePairFrequency < 0.1 | !report$KnownFusion == "no")  # Filter based on database frequency for fusion < 10% and not in knownfusionlist
+freport <- filter(report, GenePairFrequency < frequency | !report$KnownFusion == "no")  # Filter based on database frequency for fusion < 10% and not in knownfusionlist
 union_report <- filter(union_report, union_report$KnownFusion == "yes")
 
 #filter by readthrough with knownfusionlist
@@ -534,7 +540,7 @@ if (nrow(freport) > 0) {
 
 ##### RUN WITHOUT knownfusionlist, 3 caller minimum, AND COLLAPSE FOR PAPER #####
 #filter by frequency no knownfusionlist
-reportNW <- filter(report, GenePairFrequency < 0.1)  # Database frequency for fusion < 10%.
+reportNW <- filter(report, GenePairFrequency < frequency)  # Database frequency for fusion < 10%.
 
 reportNW_read_throughs <- filter(reportNW, reportNW$ReadThrough == "yes")
 reportNW_read_throughs <- unique(reportNW_read_throughs$UnorderedFusion)
