@@ -12,7 +12,7 @@
   
 To learn more about this approach, visit our BioRxiv article: [Discovery of Clinically Relevant Fusions in Pediatric Cancer](https://www.biorxiv.org/content/10.1101/2021.03.11.435013v1)
 
-<img src="/images/biorxiv_lahaye.png" width="450">   
+<img src="/images/biorxiv_lahaye.png" width="650">   
 
 ## Build the Docker image
 
