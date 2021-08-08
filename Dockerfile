@@ -43,3 +43,4 @@ COPY SCRIPTS /SCRIPTS
 # Run
 ENTRYPOINT ["bin/bash",  "/SCRIPTS/kickoff_overlap.sh"]
 
+#CMD [ "--output_location", "test_data" ]
