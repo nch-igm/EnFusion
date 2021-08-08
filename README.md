@@ -73,15 +73,13 @@ docker run -v /Users/sdl002/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SC
 
 The `-v` flag will mount a host directory as a data volume to the docker container
 The following arguments are passed to the overlap script:
-`-o` output location 
-`-s` sample ID
-`-p` patient ID
-
-#### Test data has been made available here: 
+`-o` output location  
+`-s` sample ID  
+`-p` patient ID  
 
 ##### To practice with this test data, save test data directory to local machine and then mount it as a volume:
 
-Data is located here: `EnFusion/test_data/test`
+Test data is located here: `EnFusion/test_data/test`
 
 The test data contains output from 5 callers, and upon downloading this data, the directory structure should look like this:
 
