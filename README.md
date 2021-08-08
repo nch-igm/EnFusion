@@ -68,10 +68,14 @@ starFusion    = `star-fusion.fusion_predictions.abridged.tsv`
 #### We must first mount our host directory that contains the fusion detection results as a volume to our Docker container:
 
 ```bash
-docker -v ./localdir:/data --rm run enfusion
+docker run -v /Users/sdl002/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test 
 ```
 
 The `-v` flag will mount a host directory as a data volume to the docker container
+The following arguments are passed to the overlap script:
+`-o` output location 
+`-s` sample ID
+`-p` patient ID
 
 #### Test data has been made available here: 
 
