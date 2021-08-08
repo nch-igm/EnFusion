@@ -1,4 +1,4 @@
-<img src="/images/EnFusion_name.png" width="450">   
+<img src="/images/enfusionNAME.png" width="450">   
 
 ## Sections
 
