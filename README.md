@@ -101,7 +101,7 @@ The test data contains output from 5 callers, and upon downloading this data, th
         └── starfusion   
             └── star-fusion.fusion_predictions.abridged.tsv  
 ```
-
+In this folder we also have a ```samples``` file which lists all samples included in the test_data directory. The sample listed in ```samples``` matches to the name of the other subdirectory ```test```. More than 1 sample can be in the ```samples``` directory, as long as those same samples are included as directories (samples). In this case above, the Patient ID is ```test_data``` and the Sample ID is ```test```.
 
 When running the test data you will see the following on your screen:
   
