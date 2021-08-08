@@ -1,3 +1,5 @@
+<img src="/logo/EnFusion_name.png" width="500">   
+
 # EnFusion
 
 ## Sections
