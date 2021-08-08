@@ -1,6 +1,4 @@
-<img src="/images/EnFusion_name.png" width="500">   
-
-# EnFusion
+<img src="/images/EnFusion_name.png" width="450">   
 
 ## Sections
 
