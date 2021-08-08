@@ -72,7 +72,7 @@ docker run -v /Users/sdl002/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SC
 ```
 
 The `-v` flag will mount a host directory as a data volume to the docker container
-The following arguments are passed to the overlap script:
+The following arguments are passed to the overlap script:  
 `-o` output location  
 `-s` sample ID  
 `-p` patient ID  
@@ -102,7 +102,22 @@ The test data contains output from 5 callers, and upon downloading this data, th
 ```
 
 
-
+When running the test data you will see the following on your screen:
+  
+ ```
+ SCRIPTS/test_data/test
+test_data
+/working_dir
+cp: cannot stat '/SCRIPTS/test_data/test/arriba/fusions.tsv': No such file or directory
+cp: cannot stat '/SCRIPTS/test_data/test/cicero/annotated.fusion.txt': No such file or directory
+[1] "/working_dir"
+[1] "/SCRIPTS/R"
+Assembing a list of files to merge...
+[1] "starFusion"    "fusionMap"     "fusionCatcher" "jaffa"        
+[5] "mapSplice"    
+```
+Because we only have 5 outputs in the test data, you will see an error messages about the missing data from ```arriba``` and ```cicero```. This does not affect the ability of the overlap analysis to run, and is instead a note to let the user know that output from all 7 tools was not provided. For the overlap algorithm to run, output is only required from 2 callers (at minimum).  
+  
 
 
 # TODO: nch-igm-ensemble-fusion-detection
