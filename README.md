@@ -95,13 +95,14 @@ In this folder we also have a ```samples``` file which lists all samples include
 
 #### Use Docker run to invoke EnFusion
 ```
-docker run -v /Users/sdl002/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test 
+docker run -v /Users/sdl002/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test -f 0.05
 ```
 The `-v` flag will mount a host directory as a data volume to the docker container
 The following arguments are passed to the overlap script:  
 `-o` output location  
 `-s` sample ID  
 `-p` patient ID  
+`-f` frequency cutoff to use (default is 0.10 ~ 10%, enter a decimal value here or leave blank for 10% cutoff)
 
 When running the test data you will see the following on your screen:
   
