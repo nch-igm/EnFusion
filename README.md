@@ -126,8 +126,30 @@ Next you will see a list of all unique fusions identified:
 [17] "TASOR+UBE2K"    "SNX29+TXNDC11"  "SAMD5+SASH1"    "CBX3+CCDC32"   
 [21] "NAIP+OCLN"      "NCOR2+UBC"      "STK3+VPS13B"  
 ```
+Then, printed to screen are the overlap results:
+```
+[1] "# Sample: test_data\n# NumToolsAggregated: \t5\n# - starFusionCalls = \t37\n# - fusionMapCalls = \t32\n# - fusionCatcherCalls = \t355\n# - jaffaCalls = \t491\n# - mapSpliceCalls = \t26\n# filtered_overlap = \t13"
+   UnorderedFusion   OrderedFusion KnownFusion NumTools   GenePairFrequency
+1   BAIAP2L1+FGFR3 FGFR3>>BAIAP2L1         yes        5  0.0103675777568332
+3        CD74+ROS1      CD74>>ROS1         yes        5 0.00942507068803016
+6       ETV6+NTRK3     ETV6>>NTRK3         yes        5  0.0141376060320452
+7        KIF5B+RET      KIF5B>>RET         yes        5  0.0103675777568332
+8       LMNA+NTRK1     LMNA>>NTRK1         yes        5 0.00754005655042412
+9        NCOA4+RET      NCOA4>>RET         yes        5  0.0113100848256362
+10      NTRK1+TPM3     TPM3>>NTRK1         yes        5  0.0103675777568332
+11      PAX8+PPARG     PAX8>>PPARG         yes        5  0.0131950989632422
+12    ROS1+SLC34A2   SLC34A2>>ROS1         yes        5 0.00942507068803016
+2     BRAF+SLC45A3   SLC45A3>>BRAF         yes        4 0.00848256361922714
+5      ERG+TMPRSS2    TMPRSS2>>ERG         yes        3 0.00188501413760603
+4    EGFR+SEPTIN14  EGFR>>SEPTIN14          no        2                   0
+```
+The above print to screen can be quite long.
+  
+You will also see any errors or warning printed to screen.
 
-
+### 5. Output  
+  
+    
 
 # TODO: nch-igm-ensemble-fusion-detection
 
