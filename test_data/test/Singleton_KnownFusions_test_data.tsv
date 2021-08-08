@@ -1,8 +1,0 @@
-# Sample: test_data
-# NumToolsAggregated: 	5
-# - starFusionCalls = 	37
-# - fusionMapCalls = 	32
-# - fusionCatcherCalls = 	355
-# - jaffaCalls = 	491
-# - mapSpliceCalls = 	26
-UnorderedFusion	OrderedFusion	KnownFusion	NumTools	GenePairFrequency	GenePairCount	SampleCount	Tool	Rank	Total	SupportingReads	HGNCSymbol1	Gene1	alias_match_1	multimatch1	KnownGene1	Gene1Score	Gene1Type	Chr1	Break1	Strand1	HGNCSymbol2	Gene2	alias_match_2	multimatch2	KnownGene2	Gene2Score	Gene2Type	Chr2	Break2	Strand2	Distance	ReadThrough
