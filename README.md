@@ -165,5 +165,7 @@ You will also see any errors or warning printed to screen.
 `collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv`: *collapsed* list, where each row is associated with a single fusion (not a single caller) this output does not include all individual caller information  
   
 `Singleton_KnownFusions_$sample_name.tsv`: this output includes any fusions on the `known fusion list` that were only identified by a single caller
-
+  
+    
+    
 #### For more information about the individual scripts and to run the scripts without Docker, please see this GitHub repo: https://github.com/nch-igm/nch-igm-ensemble-fusion-detection
