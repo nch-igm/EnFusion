@@ -135,7 +135,7 @@ Next you will see a list of all unique fusions identified:
 ```
 Then, printed to screen are the overlap results:
 ```
-[1] "# Sample: test_data\n# NumToolsAggregated: \t5\n# - starFusionCalls = \t37\n# - fusionMapCalls = \t32\n# - fusionCatcherCalls = \t355\n# - jaffaCalls = \t491\n# - mapSpliceCalls = \t26\n# filtered_overlap = \t13"
+[1] "# Sample: test_data\n# NumToolsAggregated: \t5\n# - starFusionCalls = \t37\n# - fusionMapCalls = \t32\n# - fusionCatcherCalls = \t355\n# - jaffaCalls = \t491\n# - mapSpliceCalls = \t26\n# filtered_overlap = \t14"
    UnorderedFusion   OrderedFusion KnownFusion NumTools   GenePairFrequency
 1   BAIAP2L1+FGFR3 FGFR3>>BAIAP2L1         yes        5  0.0103675777568332
 3        CD74+ROS1      CD74>>ROS1         yes        5 0.00942507068803016
@@ -148,7 +148,7 @@ Then, printed to screen are the overlap results:
 12    ROS1+SLC34A2   SLC34A2>>ROS1         yes        5 0.00942507068803016
 2     BRAF+SLC45A3   SLC45A3>>BRAF         yes        4 0.00848256361922714
 5      ERG+TMPRSS2    TMPRSS2>>ERG         yes        3 0.00188501413760603
-4    EGFR+SEPTIN14  EGFR>>SEPTIN14          no        2                   0
+4    EGFR+SEPTIN14  EGFR>>SEPTIN14         yes        2                   0
 ```
 The above print to screen can be quite long.
   
