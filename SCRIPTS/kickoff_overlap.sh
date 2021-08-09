@@ -116,36 +116,9 @@ run_overlap() {
 #   cp $working_dir/all_fusions_overlap_$sample_name.tsv /$output_location/all_fusions_overlap_$sample_name.tsv
    cp $working_dir/overlap_$sample_name.tsv /$output_location/overlap_$sample_name.tsv
    cp $working_dir/Singleton_KnownFusions_$sample_name.tsv /$output_location/Singleton_KnownFusions_$sample_name.tsv
-   cp $working_dir/filtered_overlap_knownfusionlist_2callers_$sample_name.tsv /$output_location/filtered_overlap_knownfusionlist_2callers_$sample_name.tsv
    cp $working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv /$output_location/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
-   cp $working_dir/Multimatch_$sample_name.tsv /$output_location/Multimatch_$sample_name.tsv
-  if [ -f $working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv ]; then
-     cp $working_dir/collapse_overlap_$sample_name.tsv /$output_location/collapse_overlap_$sample_name.tsv
-  else
-    echo "$working_dir/filtered_overlap_knownfusionlist_3callers_$sample_name.tsv does not exist"
-  fi
-  if [ -f $working_dir/no_knownfusionlist_collapse_$sample_name.tsv ]; then
-     cp $working_dir/no_knownfusionlist_collapse_$sample_name.tsv /$output_location/no_knownfusionlist_collapse_$sample_name.tsv
-  else
-    echo "$working_dir/no_knownfusionlist_collapse_$sample_name.tsv does not exist"
-  fi
-  if [ -f $working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv ]; then
-     cp $working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv $output_location/no_knownfusionlist_2callers_collapse_$sample_name.tsv
-  else
-    echo "$working_dir/no_knownfusionlist_2callers_collapse_$sample_name.tsv does not exist"
-  fi
-  if [ -f $working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv ]; then
-     cp $working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv /$output_location/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv
-  else
-    echo "$working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv does not exist"
-  fi
-  if [ -f $working_dir/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv ]; then
-     cp $working_dir/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv /$output_location/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
-  else
-    echo "$working_dir/collapse_filtered_overlap_knownfusionlist_2callers_$sample_name.tsv does not exist"
-  fi
+   cp $working_dir/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv /$output_location/collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv
 }
-
 
 main() {
   script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
