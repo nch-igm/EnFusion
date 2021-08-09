@@ -157,7 +157,11 @@ You will also see any errors or warning printed to screen.
 ## Output  
   
 ### Upon completion of the script, 4 files will be output and stored to your output_location
+  
 `overlap_$sample_name.tsv`: full list of all intersecting fusion across callers, no filtering of any kind
+  
 `filtered_overlap_knownfusionlist_3callers_$sample_name.tsv`: full list of all fusions passing filter, each line for each fusion is associated with the contributing caller  
+  
 `collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv`: *collapsed* list, where each row is associated with a single fusion (not a single caller) this output does not include all individual caller information  
+  
 `Singleton_KnownFusions_$sample_name.tsv`: this output includes any fusions on the `known fusion list` that were only identified by a single caller
