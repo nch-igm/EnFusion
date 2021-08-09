@@ -47,7 +47,7 @@ docker build . -t enfusion
 Get a help message from the entrypoint.
 
 ```bash
-docker run enfusion --help
+docker run enfusion -h
 ```
 
 Useful flags
@@ -103,9 +103,9 @@ The first part (before the `:`) `/~localpath/EnFusion/test_data` needs to be the
 The second part (after the `:`)`/SCRIPTS/test_data` is where the data will be written to within the Docker container.
   
 The following arguments are passed to the overlap script:  
-`-o` output location  
-`-s` sample ID  
-`-p` patient ID  
+`-o` output_location  
+`-s` sample_ID  
+`-p` patient_ID  
 `-f` frequency cutoff to use (default is 0.10 ~ 10%, enter a decimal value here or leave blank for 10% cutoff)
 
 When running the test data you will see the following on your screen:
@@ -156,5 +156,8 @@ You will also see any errors or warning printed to screen.
 
 ## Output  
   
-    
-
+### Upon completion of the script, 4 files will be output and stored to your output_location
+`overlap_$sample_name.tsv`: full list of all intersecting fusion across callers, no filtering of any kind
+`filtered_overlap_knownfusionlist_3callers_$sample_name.tsv`: full list of all fusions passing filter, each line for each fusion is associated with the contributing caller  
+`collapse_filtered_overlap_knownfusionlist_3callers_$sample_name.tsv`: *collapsed* list, where each row is associated with a single fusion (not a single caller) this output does not include all individual caller information  
+`Singleton_KnownFusions_$sample_name.tsv`: this output includes any fusions on the `known fusion list` that were only identified by a single caller
