@@ -99,8 +99,8 @@ In this folder we also have a ```samples``` file which lists all samples include
 docker run -v /~localpath/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test -f 0.05
 ```
 The `-v` flag will mount a host directory as a data volume to the docker container.   
-The first part `/~localpath/EnFusion/test_data:` needs to be the absolute path to where you have your data.  
-The second part `/SCRIPTS/test_data` is where the data will be written to within the Docker container.
+The first part (before the `:`) `/~localpath/EnFusion/test_data` needs to be the absolute path to where you have your data.  
+The second part (after the `:`)`/SCRIPTS/test_data` is where the data will be written to within the Docker container.
   
 The following arguments are passed to the overlap script:  
 `-o` output location  
