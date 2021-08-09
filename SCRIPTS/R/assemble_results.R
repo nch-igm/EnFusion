@@ -33,7 +33,7 @@ description <- paste0("assemble_results.R reads a set of fusion detection result
   "in the input files. The program searches recursively from the current ", "directory to find known files. The input files can also be specified ",
   "manually.")
 option_list <- list(make_option("--sample", type = "character", help = "Name of the sample. (required)"),
-  make_option("--frequency", type = "double", help = "Fusion gene pair cohort frequency, used for cutoff filtering. Use percentage as decimal value. [default = 0.10]. (required)"),
+  make_option("--frequency", type = "double", help = "Fusion gene pair cohort frequency, used for cutoff filtering. Use percentage as decimal value. [default = 0.10]."),
   make_option("--baseDir", type = "character", help = "Base directory to search for input files. [default = ./]"),
   make_option("--outReport", type = "character", help = "Location of the output report. [default = overlap_$sample.tsv]"),
   make_option("--collapseoutReport", type = "character", help = "Location of the output collapse report. [default = collapse_overlap_$sample.tsv]"),

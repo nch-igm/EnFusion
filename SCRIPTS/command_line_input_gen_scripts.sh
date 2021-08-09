@@ -16,7 +16,6 @@ top_dir2,... that contain the lists of samples to generate scripts for. The \
 number of samples files provided must be equal to the number of top \
 directories, and they must be listed in the same respective order. [Default: \
 samples,samples,...].
--f * frequency for filtering cutoff. [Default : 0.10].
 -r * [root_dir] (Optional) Root directory under which the top directories are \
 located. [Default: /igm/projects]
 -q * [sge_queue] (Optional) SGE queue to submit jobs. The fusion callers can \
@@ -36,7 +35,7 @@ get_command_line_input() {
     exit 1
   fi
 
-  while getopts ":t:s:f:r:h" opt; do
+  while getopts ":t:s:r:h" opt; do
     case $opt in
       h)
         script_usage
@@ -49,10 +48,6 @@ get_command_line_input() {
       s)
         local samples_files
         samples_files="$OPTARG"
-        ;;
-      f)
-        local frequency
-        frequency="$OPTARG"
         ;;
       r)
         ROOT_DIR="$OPTARG"
@@ -92,13 +87,6 @@ get_command_line_input() {
     echo "the number of samples files ($num_samples_files). See -h for details."
     exit 1
   fi
-
-if [[ -z "$frequency" ]]; then
-      echo "default frequency selected"
-    done
-  else
-    $frequency = frequency
-
 
   if [[ -z "$ROOT_DIR" ]]; then
     ROOT_DIR=""

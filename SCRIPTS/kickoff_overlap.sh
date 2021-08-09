@@ -108,7 +108,11 @@ run_overlap() {
   if [[ "$upload_to_db" == "true" ]]; then
     $script_dir/R/upload_fusion_results.R --subject $patient_id --sample $sample_name
   fi
-  $script_dir/R/assemble_results.R --sample $sample_name --outReport $working_dir/overlap_$sample_name.tsv
+  if [[ -z "$frequency" ]]; then
+    $script_dir/R/assemble_results.R --sample $sample_name --outReport $working_dir/overlap_$sample_name.tsv
+  else 
+  $script_dir/R/assemble_results.R --sample $sample_name --outReport $working_dir/overlap_$sample_name.tsv --frequency $frequency
+  fi 
 #   cp $working_dir/all_fusions_overlap_$sample_name.tsv /$output_location/all_fusions_overlap_$sample_name.tsv
    cp $working_dir/overlap_$sample_name.tsv /$output_location/overlap_$sample_name.tsv
    cp $working_dir/Singleton_KnownFusions_$sample_name.tsv /$output_location/Singleton_KnownFusions_$sample_name.tsv
