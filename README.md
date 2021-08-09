@@ -96,7 +96,7 @@ In this folder we also have a ```samples``` file which lists all samples include
 
 #### Use Docker run to invoke EnFusion
 ```
-docker run -v /~localpath/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test -f 0.05
+docker run -v /~localpath/EnFusion/test_data:/SCRIPTS/test_data enfusion -o SCRIPTS/test_data/test -s test_data -p test -f 0.2
 ```
 The `-v` flag will mount a host directory as a data volume to the docker container.   
 The first part (before the `:`) `/~localpath/EnFusion/test_data` needs to be the absolute path to where you have your data.  
