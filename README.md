@@ -65,7 +65,7 @@ jaffa         = `jaffa_results.csv`
 mapSplice     = `fusions_well_annotated.txt`   
 starFusion    = `star-fusion.fusion_predictions.abridged.tsv`   
 
-### 4. Run the Docker image
+## Run the Docker image
 
 #### We must first mount our host directory that contains the fusion detection results as a volume to our Docker container:
 
