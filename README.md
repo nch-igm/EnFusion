@@ -5,6 +5,7 @@
 - [Introduction](#introduction)
 - [Build the Docker image](#build-the-docker-image)
 - [Run the Docker image](#run-the-docker-image)
+- [Output] (#output)
 
 ## Introduction
 
@@ -150,7 +151,7 @@ The above print to screen can be quite long.
   
 You will also see any errors or warning printed to screen.
 
-### 5. Output  
+## Output  
   
     
 
