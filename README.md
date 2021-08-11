@@ -35,6 +35,8 @@ git clone https://github.com/nch-igm/EnFusion.git
 
 ### 3. Build the EnFusion Docker image
 
+Before building the image, if the user would like to use a `known fusion list`, please upload this and save it within the `SCRIPTS` directory. This file should be a txt file where each fusion paid (separrated by a --) is on a single line. No header should be added. Follow example 
+
 Navigate to the EnFusion directory and run Docker build.
 
 ```bash
