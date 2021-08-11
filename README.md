@@ -58,7 +58,7 @@ Useful flags
 - `-it` allows for an interactive session.
 - `--entrypoint "/bin/bash"` overwrites the entrypoint with the bash binary.
 
-#### Please note that for the overlap script to run properly, there is an expected file structure hierarchy, however, as long as the below files are included within the mounted volume to the Docker, the overlap script will recursively search all directories under the `input_location` for fusion detection result files. The default search looks for the following expected file names:
+#### Please note that for the overlap script to run properly, there is an expected file structure hierarchy (refer to how test data is stored in the `test_data` directory for an example, however, as long as the below files are included within the mounted volume to the Docker, the overlap script will recursively search all directories under the `input_location` for fusion detection result files. The default search looks for the following expected file names:
 
 arriba        = `fusions.tsv`  
 cicero        = `annotated.fusion.txt`   
