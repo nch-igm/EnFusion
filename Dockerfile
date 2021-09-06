@@ -27,7 +27,7 @@ RUN R -e "install.packages('readr', repos='http://cran.us.r-project.org/')"
 RUN R -e "install.packages('DBI', repos='http://cran.us.r-project.org/')"
 RUN R -e "install.packages('RPostgres', repos='http://cran.us.r-project.org/')"
 RUN R -e "install.packages('dbplyr', repos='http://cran.us.r-project.org/')"
-RUN R -e "install.packages('magritter', repos='http://cran.us.r-project.org/')"
+RUN R -e "install.packages('magrittr', repos='http://cran.us.r-project.org/')"
 RUN R -e "install.packages('purrr', repos='http://cran.us.r-project.org/')"
 
 #Install tools using pip that will be used in the analysis
