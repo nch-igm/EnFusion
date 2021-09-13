@@ -14,7 +14,6 @@
 To learn more about this approach, visit our BioRxiv article: [Discovery of Clinically Relevant Fusions in Pediatric Cancer](https://www.biorxiv.org/content/10.1101/2021.03.11.435013v1)
 
 <img src="/images/biorxiv_lahaye.png" width="650">   
-<br> 
 
 #### Please note that we have included our "recurrent fusion list", described in the above manuscript
 This list can be found here: `SCRIPTS/R/GenePairCounts_2021-08-05.tsv` <br>
