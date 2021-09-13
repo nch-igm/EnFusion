@@ -75,7 +75,7 @@ This is an internally generated list from the [The Steve and Cindy Rasmussen Ins
 
 **Installation instructions:** Installation instructions available at the STAR-Fusion GitHub: https://github.com/STAR-Fusion/STAR-Fusion/wiki <br>
 **Publication:** Haas, B.J., et al. (2019) Accuracy assessment of fusion transcript detection via read-mapping and de novo fusion transcript assembly-based methods. Genome Biology. [manuscript link](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1842-9) <br>
-**Running instructions:** STAR-Fusion parameters were altered to reduce the stringency setting for the fusion fragments per million reads (FFPM) from 0.05 to 0.02. <br>
+**Running instructions:** STAR-Fusion parameters were altered to reduce the stringency setting for the fusion fragments per million reads (FFPM) to 0.02. <br> `--min_FFPM 0.02` <br>
 **Version used in publication:** v1.6.0 <br>
 **Latest version validated:** v1.6.0 <br><br>
 <br> <br>  
