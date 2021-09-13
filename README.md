@@ -25,7 +25,7 @@ This allows for filtering out of recurrent and likely artifactual fusions. We wi
 ### Arriba
 
 **Installation instructions:** Installation instructions available at the Arriba GitHub: https://github.com/suhrig/arriba  <br>
-**Publication:** Uhrig, S., et al. (2021) Accurate and efficient detection of gene fusions from RNA sequencing data. Genome Research. [link](https://genome.cshlp.org/content/31/3/448) <br>
+**Publication:** Uhrig, S., et al. (2021) Accurate and efficient detection of gene fusions from RNA sequencing data. Genome Research. <br> [manuscript link](https://genome.cshlp.org/content/31/3/448) <br>
 **Running instructions:** We utilize default settings for Arriba  <br><br><br>
 
 ### CICERO
