@@ -20,7 +20,7 @@ This list can be found here: `SCRIPTS/R/GenePairCounts_2021-08-05.tsv` <br>
 This is an internally generated list from the Institute from Genomic Medicine at Nationwide Children's Hospital. This list contains fusion partner frequencies collected from deidentified RNA-seq data from our [Comprehensive Cancer Protocol](https://www.nationwidechildrens.org/specialties/institute-for-genomic-medicine/translational-genomic-protocols) which is comprised of pediatric tumors (including central nervous system tumors, solid tumors, and hematologic malignancies). The utilization of this list allows for filtering out of recurrent and likely artifactual fusions. We will update this list biannually and will timestamp it by its release date. The below running instructions describe its use as a filtering mechanism. <br><br> 
 
 
-## Installation and running instructions for individual callers
+# Installation and running instructions for individual callers
 
 ### Arriba
 
@@ -71,7 +71,11 @@ This is an internally generated list from the Institute from Genomic Medicine at
 **Running instructions:** STAR-Fusion parameters were altered to reduce the stringency setting for the fusion fragments per million reads (FFPM) from 0.05 to 0.02. <br>
 **Version used in publication:** v1.6.0 <br><br>
 <br> <br>  
-    
+
+
+
+# Instructions to build and run EnFusion overlap algorithgm Docker Image 
+
 ## Build the Docker image
 
 We tested the instructions on Mac. They may work on Linux or Windows with or
