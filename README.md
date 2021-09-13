@@ -24,14 +24,14 @@ This allows for filtering out of recurrent and likely artifactual fusions. We wi
 
 ### Arriba
 
-**Up to date installation instructions:** Installation instructions available at the Arriba GitHub: https://github.com/suhrig/arriba  
-**Publication:** [Uhrig, S., et al. (2021) Accurate and efficient detection of gene fusions from RNA sequencing data. Genome Research.](https://genome.cshlp.org/content/31/3/448)   
+**Installation instructions:** Installation instructions available at the Arriba GitHub: https://github.com/suhrig/arriba  <br>
+**Publication:** [Uhrig, S., et al. (2021) Accurate and efficient detection of gene fusions from RNA sequencing data. Genome Research.]<br>(https://genome.cshlp.org/content/31/3/448)   
 **Running instructions:** We utilize default settings for Arriba 
 
 ### CICERO
 
-**Up to date installation instructions:** Installation instructions available at the CICERO GitHub: https://github.com/stjude/CICERO  
-**Publication:** [Tian, L., et al. (2020) CICERO: a versatile method for detecting complex and diverse driver fusions using cancer RNA sequencing data. Genome Biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02043-x)   
+**Installation instructions:** Installation instructions available at the CICERO GitHub: https://github.com/stjude/CICERO  <br>
+**Publication:** [Tian, L., et al. (2020) CICERO: a versatile method for detecting complex and diverse driver fusions using cancer RNA sequencing data. Genome Biology](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02043-x)   <br>
 **Running instructions:** We utilize default settings for CICERO 
 
 ### FusionMap
