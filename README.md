@@ -27,38 +27,49 @@ This is an internally generated list from the Institute from Genomic Medicine at
 **Installation instructions:** Installation instructions available at the Arriba GitHub: https://github.com/suhrig/arriba  <br><br>
 **Publication:** Uhrig, S., et al. (2021) Accurate and efficient detection of gene fusions from RNA sequencing data. Genome Research. <br> [manuscript link](https://genome.cshlp.org/content/31/3/448) <br><br>
 **Running instructions:** We utilize default settings for Arriba  <br><br>
+**Version used in publication:** v1.2.0 <br><br>
 
 ### CICERO
 
 **Installation instructions:** Installation instructions available at the CICERO GitHub: https://github.com/stjude/CICERO <br><br>
 **Publication:** Tian, L., et al. (2020) CICERO: a versatile method for detecting complex and diverse driver fusions using cancer RNA sequencing data. Genome Biology. <br> [manuscript link](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02043-x) <br><br>
 **Running instructions:** We utilize default settings for CICERO <br><br>
+**Version used in publication:** v0.3.0 <br><br>
 
 ### FusionMap
 
 **Installation instructions:** FusionMap is apart of the Oshell toolkit and installation instructions are available at: http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap <br><br>
 **Publication:** Ge, H., et al. (2011) FusionMap: detecting fusion genes from next-generation sequencing data at base-pair resolution. Bioinformatics. <br> [manuscript link](https://academic.oup.com/bioinformatics/article/27/14/1922/194689) <br><br>
 **Running instructions:** We utilize default settings for FusionMap <br><br>
+**Version used in publication:** v mono-2.10.9 <br><br>
 
 ### FusionCatcher
 
 **Installation instructions:** Installation instructions available at the FusionCatcher GitHub: https://github.com/ndaniel/fusioncatcher <br><br>
 **bioRxiv Preprint:** Nicorici, D., et al. (2014) FusionCatcher – a tool for finding somatic fusion genes in paired-end RNA-sequencing data. bioRxiv. <br> [preprint link](https://www.biorxiv.org/content/10.1101/011650v1.full.pdf+html) <br><br>
 **Running instructions:** We utilize default settings for FusionMap <br><br>
-
+**Version used in publication:** v0.99.7c <br><br>
 
 ### JAFFA
 
+**Installation instructions:** Installation instructions available at the JAFFA GitHub: https://github.com/Oshlack/JAFFA/wiki/Download <br><br>
+**Publication:** Davidson, N.M., et al. (2015) MapSplice: Accurate mapping of RNA-seq reads for splice junction discovery. Nucleic Acids Research. <br> [manuscript link](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-015-0167-x) <br><br>
+**Running instructions:** We utilize default settings for JAFFA direct <br><br>
+**Version used in publication:** direct v1.09 <br><br> 
 
 ### MapSplice
 
 **Installation instructions:** Installation instructions available at the MapSplice GitHub: https://github.com/LiuBioinfo/MapSplice <br><br>
-**Publication:** Wang, K., et al. (2010) MapSplice: Accurate mapping of RNA-seq reads for splice junction discovery. Nucleic Acids Research <br> [manuscript link](https://academic.oup.com/nar/article/38/18/e178/1068935) <br><br>
+**Publication:** Wang, K., et al. (2010) JAFFA: High sensitivity transcriptome-focused fusion gene detection. Genome Medicine. <br> [manuscript link](https://academic.oup.com/nar/article/38/18/e178/1068935) <br><br>
 **Running instructions:** We utilize default settings for MapSplice <br><br>
+**Version used in publication:** v2.2.1 <br><br>
 
 ### STAR-Fusion
 
-
+**Installation instructions:** Installation instructions available at the STAR-Fusion GitHub: https://github.com/STAR-Fusion/STAR-Fusion/wiki <br><br>
+**Publication:** Haas, B.J., et al. (2019) Accuracy assessment of fusion transcript detection via read-mapping and de novo fusion transcript assembly-based methods. Genome Biology. <br> [manuscript link](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1842-9) <br><br>
+**Running instructions:** STAR-Fusion parameters were altered to reduce the stringency setting for the fusion fragments per million reads (FFPM) from 0.05 to 0.02. <br><br>
+**Version used in publication:** v1.6.0 <br><br>
 <br> <br>  
     
 ## Build the Docker image
