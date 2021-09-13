@@ -17,7 +17,7 @@ To learn more about this approach, visit our BioRxiv article: [Discovery of Clin
 
 ### We have included our recurrent fusion list here:  
 `SCRIPTS/R/GenePairCounts_2021-08-05.tsv`  
-This allows for filtering out of recurrent and likely artifactual fusions. We will update this list biannually and will timestamp it by its release date.  
+This allows for filtering out of recurrent and likely artifactual fusions. We will update this list biannually and will timestamp it by its release date. The below running instructions describe its use as a filtering mechanism. <br><br> 
 
 
 ## Installation and running instructions for individual callers
