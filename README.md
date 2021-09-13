@@ -48,7 +48,7 @@ This is an internally generated list from the Institute from Genomic Medicine at
 
 **Installation instructions:** Installation instructions available at the FusionCatcher GitHub: https://github.com/ndaniel/fusioncatcher <br>
 **bioRxiv Preprint:** Nicorici, D., et al. (2014) FusionCatcher – a tool for finding somatic fusion genes in paired-end RNA-sequencing data. bioRxiv. [preprint link](https://www.biorxiv.org/content/10.1101/011650v1.full.pdf+html) <br>
-**Running instructions:** We utilize default settings for FusionMap <br>
+**Running instructions:** We utilize default settings for FusionCatcher <br>
 **Version used in publication:** v0.99.7c <br><br>
 
 ### JAFFA
