@@ -16,7 +16,7 @@ To learn more about this approach, visit our BioRxiv article: [Discovery of Clin
 <img src="/images/biorxiv_lahaye.png" width="650">   
 <br> 
 
-### Please note that we have included a "recurrent fusion list"  
+#### Please note that we have included our "recurrent fusion list", described in the above manuscript
 This list can be found here: `SCRIPTS/R/GenePairCounts_2021-08-05.tsv` <br>
 This is an internally generated list from the Institute from Genomic Medicine at Nationwide Children's Hospital. This list contains fusion partner frequencies collected from RNA-seq data from our [Comprehensive Cancer Protocol](https://www.nationwidechildrens.org/specialties/institute-for-genomic-medicine/translational-genomic-protocols) which is comprised of pediatric tumors (including central nervous system tumors, solid tumors, and hematologic malignancies). <br>
 The utilization of this list allows for filtering out of recurrent and likely artifactual fusions. We will update this list biannually and will timestamp it by its release date. The below running instructions describe its use as a filtering mechanism. <br><br> 
