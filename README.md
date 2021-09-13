@@ -39,7 +39,7 @@ This is an internally generated list from the Institute from Genomic Medicine at
 
 ### FusionMap
 
-**Installation instructions:** FusionMap is apart of the Oshell toolkit and installation instructions are available at: http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap <br>
+**Installation instructions:** FusionMap is a part of the Oshell toolkit and installation instructions are available at: http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap <br>
 **Publication:** Ge, H., et al. (2011) FusionMap: detecting fusion genes from next-generation sequencing data at base-pair resolution. Bioinformatics. [manuscript link](https://academic.oup.com/bioinformatics/article/27/14/1922/194689) <br>
 **Running instructions:** We utilize default settings for FusionMap <br>
 **Version used in publication:** v mono-2.10.9 <br><br>
