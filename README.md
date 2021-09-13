@@ -40,7 +40,7 @@ This allows for filtering out of recurrent and likely artifactual fusions. We wi
 ### STAR-Fusion
 
 
-  
+<br> <br>  
     
 ## Build the Docker image
 
