@@ -36,6 +36,9 @@ This allows for filtering out of recurrent and likely artifactual fusions. We wi
 
 ### FusionMap
 
+**Installation instructions:** FusionMap is apart of the Oshell toolkit and installation instructions are available at: http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap <br><br>
+**Publication:** Ge, H., et al. (2011) FusionMap: detecting fusion genes from next-generation sequencing data at base-pair resolution. Bioinformatics <br> [manuscript link](https://academic.oup.com/bioinformatics/article/27/14/1922/194689) <br><br>
+**Running instructions:** We utilize default settings for FusionMap <br><br>
 
 ### FusionCatcher
 
