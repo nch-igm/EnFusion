@@ -74,7 +74,7 @@ This is an internally generated list from the Institute from Genomic Medicine at
 
 
 
-# Instructions to build and run EnFusion overlap algorithgm Docker Image 
+# Instructions to build and run EnFusion overlap Docker Image 
 
 ## Build the Docker image
 
