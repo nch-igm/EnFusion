@@ -20,6 +20,27 @@ To learn more about this approach, visit our BioRxiv article: [Discovery of Clin
 This allows for filtering out of recurrent and likely artifactual fusions. We will update this list biannually and will timestamp it by its release date.  
 
 
+## Installation and running instructions for individual callers
+
+### Arriba
+
+
+### CICERO
+
+
+### FusionMap
+
+
+### FusionCatcher
+
+
+### JAFFA
+
+
+### STAR-Fusion
+
+
+
 ## Build the Docker image
 
 We tested the instructions on Mac. They may work on Linux or Windows with or
