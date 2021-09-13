@@ -167,7 +167,7 @@ The following arguments are passed to the overlap script:
 `-p` patient_ID  
 `-f` frequency cutoff to use (default is 0.10 ~ 10%, enter a decimal value here or leave blank for 10% cutoff)
 
-#### The '-f' argument utilizes the "recurrent fusion list" which has been generated from an internal RNA-seq cohort and is used to identify recurrent and likely artifcatual fusions. To prevent any filtering, set this argument to `0`.
+#### The `-f` argument utilizes the "recurrent fusion list" which has been generated from an internal RNA-seq cohort and is used to identify recurrent and likely artifcatual fusions. To prevent any filtering, set this argument to `0`.
 
 When running the test data you will see the following on your screen:
   
