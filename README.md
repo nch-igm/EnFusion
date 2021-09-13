@@ -3,6 +3,7 @@
 ## Sections
 
 - [Introduction](#introduction)
+- [Installation and running instructions for individual callers](#callers)
 - [Build the Docker image](#build-the-docker-image)
 - [Run the Docker image](#run-the-docker-image)
 - [Output](#output)
