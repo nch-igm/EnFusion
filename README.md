@@ -31,20 +31,30 @@ This allows for filtering out of recurrent and likely artifactual fusions. We wi
 ### CICERO
 
 **Installation instructions:** Installation instructions available at the CICERO GitHub: https://github.com/stjude/CICERO <br><br>
-**Publication:** Tian, L., et al. (2020) CICERO: a versatile method for detecting complex and diverse driver fusions using cancer RNA sequencing data. Genome Biology <br> [manuscript link](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02043-x) <br><br>
+**Publication:** Tian, L., et al. (2020) CICERO: a versatile method for detecting complex and diverse driver fusions using cancer RNA sequencing data. Genome Biology. <br> [manuscript link](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02043-x) <br><br>
 **Running instructions:** We utilize default settings for CICERO <br><br>
 
 ### FusionMap
 
 **Installation instructions:** FusionMap is apart of the Oshell toolkit and installation instructions are available at: http://www.arrayserver.com/wiki/index.php?title=Oshell#OmicScript_for_FusionMap <br><br>
-**Publication:** Ge, H., et al. (2011) FusionMap: detecting fusion genes from next-generation sequencing data at base-pair resolution. Bioinformatics <br> [manuscript link](https://academic.oup.com/bioinformatics/article/27/14/1922/194689) <br><br>
+**Publication:** Ge, H., et al. (2011) FusionMap: detecting fusion genes from next-generation sequencing data at base-pair resolution. Bioinformatics. <br> [manuscript link](https://academic.oup.com/bioinformatics/article/27/14/1922/194689) <br><br>
 **Running instructions:** We utilize default settings for FusionMap <br><br>
 
 ### FusionCatcher
 
+**Installation instructions:** Installation instructions available at the FusionCatcher GitHub: https://github.com/ndaniel/fusioncatcher <br><br>
+**bioRxiv Preprint:** Nicorici, D., et al. (2014) FusionCatcher – a tool for finding somatic fusion genes in paired-end RNA-sequencing data. bioRxiv. <br> [preprint link](https://www.biorxiv.org/content/10.1101/011650v1.full.pdf+html) <br><br>
+**Running instructions:** We utilize default settings for FusionMap <br><br>
+
 
 ### JAFFA
 
+
+### MapSplice
+
+**Installation instructions:** Installation instructions available at the MapSplice GitHub: https://github.com/LiuBioinfo/MapSplice <br><br>
+**Publication:** Wang, K., et al. (2010) MapSplice: Accurate mapping of RNA-seq reads for splice junction discovery. Nucleic Acids Research <br> [manuscript link](https://academic.oup.com/nar/article/38/18/e178/1068935) <br><br>
+**Running instructions:** We utilize default settings for MapSplice <br><br>
 
 ### STAR-Fusion
 
