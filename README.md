@@ -232,6 +232,3 @@ You will also see any errors or warning printed to screen.
   
 `Singleton_KnownFusions_$sample_name.tsv`: this output includes any fusions on the `known fusion list` that were only identified by a single caller
   
-    
-    
-#### For more information about the individual scripts and to run the scripts without Docker, please see this GitHub repo: https://github.com/nch-igm/nch-igm-ensemble-fusion-detection
