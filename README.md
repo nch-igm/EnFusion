@@ -129,7 +129,7 @@ starFusion    = `star-fusion.fusion_predictions.abridged.tsv`
 
 #### We must first mount our host directory that contains the fusion detection results as a volume to our Docker container:
 
-##### To practice with this test data, save test data directory to local machine and then mount it as a volume:
+##### To do this this with the test data, save test the data directory to your local machine and then mount it as a volume:
 
 Test data is located here: `EnFusion/test_data/test`
 
@@ -167,7 +167,7 @@ The following arguments are passed to the overlap script:
 `-p` patient_ID  
 `-f` frequency cutoff to use (default is 0.10 ~ 10%, enter a decimal value here or leave blank for 10% cutoff)
 
-#### The `-f` argument utilizes the "recurrent fusion list" which has been generated from an internal RNA-seq cohort and is used to identify recurrent and likely artifactual fusions. This list can be found here `SCRIPTS/R/GenePairCounts_2021-08-05.tsv` and will be updated biannually and timestamped by date of collection. Please note that if you would like to prevent any filtering, you can set this argument to `0`.
+#### Note that the `-f` argument utilizes the "recurrent fusion list" which has been generated from an internal RNA-seq cohort and is used to identify recurrent and likely artifactual fusions. This list can be found here `SCRIPTS/R/GenePairCounts_2021-08-05.tsv` and will be updated biannually and timestamped by date of collection. Please note that if you would like to prevent any filtering, you can set this argument to `0`.
 
 When running the test data you will see the following on your screen:
   
