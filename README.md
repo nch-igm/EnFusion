@@ -58,7 +58,7 @@ This is an internally generated list from the [The Steve and Cindy Rasmussen Ins
 ### JAFFA
 
 **Installation instructions:** Installation instructions available at the JAFFA GitHub: https://github.com/Oshlack/JAFFA/wiki/Download <br>
-**Publication:** Davidson, N.M., et al. (2015) MapSplice: Accurate mapping of RNA-seq reads for splice junction discovery. Nucleic Acids Research. [manuscript link](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-015-0167-x)<br>
+**Publication:** Wang, K., et al. (2010) JAFFA: High sensitivity transcriptome-focused fusion gene detection. Genome Medicine. [manuscript link](https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-015-0167-x)<br>
 **Running instructions:** We utilize default settings for JAFFA direct <br>
 **Version used in publication:** direct v1.09 <br>
 **Latest version validated:** direct v1.09 <br><br>
@@ -66,7 +66,7 @@ This is an internally generated list from the [The Steve and Cindy Rasmussen Ins
 ### MapSplice
 
 **Installation instructions:** Installation instructions available at the MapSplice GitHub: https://github.com/LiuBioinfo/MapSplice <br>
-**Publication:** Wang, K., et al. (2010) JAFFA: High sensitivity transcriptome-focused fusion gene detection. Genome Medicine. [manuscript link](https://academic.oup.com/nar/article/38/18/e178/1068935)<br>
+**Publication:** Davidson, N.M., et al. (2015) MapSplice: Accurate mapping of RNA-seq reads for splice junction discovery. Nucleic Acids Research. [manuscript link](https://academic.oup.com/nar/article/38/18/e178/1068935)<br>
 **Running instructions:** We utilize default settings for MapSplice <br>
 **Version used in publication:** v2.2.1 <br>
 **Latest version validated:** v2.2.1 <br><br>
